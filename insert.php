@@ -15,14 +15,14 @@
           $dbpwd = getenv("databasepassword");
           $dbname = getenv("databasename");
 
-         $connection = new mysqli($dbhost, $dbuser, $dbpwd, $dbname);
-         if ($connection->connect_errno) {
-         printf("Connect failed: %s\n", $mysqli->connect_error);
-         exit();
-        } else {
-         printf("Connected to the database");
-     }
-     $connection->close();
+         //$connection = new mysqli($dbhost, $dbuser, $dbpwd, $dbname);
+        // if ($connection->connect_errno) {
+        // printf("Connect failed: %s\n", $mysqli->connect_error);
+       //  exit();
+       // } else {
+      //   printf("Connected to the database");
+    // }
+     //$connection->close();
      
         //$dbuser = 'mysqlkurs';
         //$dbpass = 'KC00iT8s0NOSpl5S';
