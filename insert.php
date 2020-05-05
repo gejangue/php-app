@@ -9,55 +9,8 @@
 
      <?php
           
-          $dbhost = getenv("MYSQL_SERVICE_HOST");
-          $dbport = getenv("MYSQL_SERVICE_PORT");
-          $dbuser = getenv("databaseuser");
-          $dbpwd = getenv("databasepassword");
-          $dbname = getenv("databasename");
-
-         //$connection = new mysqli($dbhost, $dbuser, $dbpwd, $dbname);
-        // if ($connection->connect_errno) {
-        // printf("Connect failed: %s\n", $mysqli->connect_error);
-       //  exit();
-       // } else {
-      //   printf("Connected to the database");
-    // }
-     //$connection->close();
-     
-        //$dbuser = 'mysqlkurs';
-        //$dbpass = 'KC00iT8s0NOSpl5S';
-        //$dbname = 'mysql_kurs';
-        // Hier käme der Link zum Host
-        //$dbhost = '...';
-
-        $pdo = new PDO("mysql:host=$dbhost;dbname=$dbname", $dbuser, $dbpass);
-
-        if(count($_POST) > 0):
-            if( !strlen($_POST['titel']) > 0
-                || !strlen($_POST['autor']) > 0
-                || !strlen($_POST['seiten']) > 0
-                || !strlen($_POST['isbn']) > 0
-            ){
-                echo "Nicht alle Werte eingegeben! <br>";
-                echo "NICHT GESPEICHERT!";
-            }else{
-                $sql = "INSERT INTO buecher "
-                    ."(titel, autor, seiten, isbn) VALUES "
-                    ."(:titel, :autor, :seiten, :isbn)";
-                
-                $query = $pdo->prepare($sql);
-                $query->bindParam(':titel', $_POST['titel'], PDO::PARAM_STR);
-                $query->bindParam(':autor', $_POST['autor'], PDO::PARAM_STR);
-                $query->bindParam(':seiten', $_POST['seiten'], PDO::PARAM_INT);
-                $query->bindParam(':isbn', $_POST['isbn'], PDO::PARAM_STR);
-                $query->execute();
-                
-                if($pdo->lastInsertId()){
-                    echo "Gespeichert!";
-                }
-            }
-
-        endif;
+          print "Hello, World! php version is " . PHP_VERSION . "\n";
+          
 
      ?>
        <h1>Ein Buch erfassen:</h1>
